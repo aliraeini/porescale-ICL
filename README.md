@@ -1,3 +1,25 @@
+> [!NOTE]
+> Do not fork/clone this branch, download using the following commands:
+> ```bash
+> git clone --recurse-submodules -b master git@github.com:/aliraeini/porescale-ICL.git porescale
+> cd porescale
+> #git remote add iclhub git@github.com:ImperialCollegeLondon/porescale.git
+> #git fetch  iclhub master
+> #git rebase iclhub/master
+> #git submodule update --remote # and pray!
+> make -j 8
+> make test
+> #git push iclhub HEAD:master
+> ```
+>
+> The commented commands are for pulling/pushing upstream changes and may not work.
+>
+> Some [modules](./src) have no cross dependency here.
+> The ones that do are discussed [below](#cloning-codes).
+> You may want to update these based on my forked versions,
+> see [aliraeini/porescale](https://github.com/aliraeini/porescale/tree/main/src).
+> Let me know for help or pull requests.
+
 ### Pore-Scale Modelling
 Flow in porous media occurs is ubiquitous in natural and manufactured settings, from rainfall falling on soil and transpiration in plants, to filling a baby’s nappy and fluid exchange in electrochemical devices, such as electrolysers and fuel cells. Underground, most of the world’s fresh water is held in porous rock and soil, while deeper formations may contain oil and gas; otherwise the pore space is filled with salty water which can be displaced to store carbon dioxide or hydrogen.
 
@@ -8,7 +30,7 @@ This repository has been established to facilitate access to all pore-scale mode
 
 
 <!-- ### **Here are links to the individual code repositories:** ### -->
- 
+
 | Repository | Description |
 |------------|-------------|
 | <div align="center">**[pnextract](https://github.com/ImperialCollegeLondon/pnextract)** </div>| <div align="center"><img src="readme_resources/pnextract.png" width="600"/><br/><strong>Pore Network Extraction from Micro-CT Images of Porous Media</strong></div> |
@@ -32,18 +54,18 @@ This repository has been established to facilitate access to all pore-scale mode
 
 ## Pore-scale modules for code developers
 
-This repository serves as developer guide for integrating different git 
-codes/submodules linked here and contains no code of its own. 
+This repository serves as developer guide for integrating different git
+codes/submodules linked here and contains no code of its own.
 
 
-The script [setup_from_scratch.sh](setup_from_scratch.sh) can be used to 
-regenerate this repository from scratch. 
+The script [setup_from_scratch.sh](setup_from_scratch.sh) can be used to
+regenerate this repository from scratch.
 
-You need to 
-[set up a ssh key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) 
-and add it to your Github account for the instructions here to work. 
-Otherwise you can modify the git commands and replace the all the `git:` addresses 
-with corresponding `https:` addresses, if you do not want to push your changes back 
+You need to
+[set up a ssh key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+and add it to your Github account for the instructions here to work.
+Otherwise you can modify the git commands and replace the all the `git:` addresses
+with corresponding `https:` addresses, if you do not want to push your changes back
 to Github.
 
 
@@ -60,7 +82,7 @@ to Github.
 
 To **clone all the modules at once**, which can be time-consuming to compile, run:
 
-`git clone ----recurse-submodules git@github.com:ImperialCollegeLondon/porescale.git`
+`git clone --recurse-submodules git@github.com:ImperialCollegeLondon/porescale.git`
 
 
 ----------------------------------------------------------------
@@ -69,7 +91,7 @@ To cherry-pick the submodules, first **clone this repository:**
 
 `git clone git@github.com:ImperialCollegeLondon/porescale.git`
 
-or 
+or
 
 `git clone https://github.com/ImperialCollegeLondon/porescale.git`
 
@@ -108,8 +130,8 @@ Pore-network model, **pnextract and pnflow:**
 
 ### Create from scratch
 
-Instead of running the git commands above, you can run the contents of 
-[setup_from_scratch.sh](setup_from_scratch.sh), to generate this 
+Instead of running the git commands above, you can run the contents of
+[setup_from_scratch.sh](setup_from_scratch.sh), to generate this
 repository from scratch.
 
 
@@ -119,7 +141,7 @@ repository from scratch.
 
 Compilation requires gnu and cmake and a c++ compiler.  Compilation of porefoam and ContactAngle codes additionally requires libscotch-dev and openmpi-dev, in Ubuntu Linux.
 
-Once you have the prerequisites installed, to compile the codes, run `make`, or `make -j` for parallel build. 
+Once you have the prerequisites installed, to compile the codes, run `make`, or `make -j` for parallel build.
 
 To test the compilation run `make test`.
 
@@ -133,6 +155,3 @@ For contacts and references, please visit the individual modules or explore our 
 Alternatively, contact **Sajjad Foroughi**:
 - Email: s.foroughi@imperial.ac.uk
 - Additional Email: foroughi.sajad@gmail.com
-
-
-
