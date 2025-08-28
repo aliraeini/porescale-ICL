@@ -1,24 +1,23 @@
-> [!NOTE]
-> Do not fork/clone this branch, download using the following commands:
-> ```bash
-> git clone --recurse-submodules -b master git@github.com:/aliraeini/porescale-ICL.git porescale
-> cd porescale
-> #git remote add iclhub git@github.com:ImperialCollegeLondon/porescale.git
-> #git fetch  iclhub master
-> #git rebase iclhub/master
-> #git submodule update --remote # and pray!
-> make -j 8
-> make test
-> #git push iclhub HEAD:master
-> ```
+> [!NOTE] 
+> * See also [a detached version](https://github.com/aliraeini/porescale) that allows me to branch without GitHub-fork interference. 
+> * **Do not fork this repo, download the [master branch](https://github.com/aliraeini/porescale-ICL/tree/master)**
+>   **using the following commands:**
+>   ```bash
+>   git clone --recurse-submodules -b master git@github.com:/aliraeini/porescale-ICL.git porescale
+>   cd porescale
+>   #git remote add iclhub git@github.com:ImperialCollegeLondon/porescale.git
+>   #git fetch  iclhub master
+>   #git rebase iclhub/master
+>   #git submodule update --remote # and pray!
+>   make -j 8
+>   make test
+>   #git push iclhub HEAD:master
+>   ```
 >
-> The commented commands are for pulling/pushing upstream changes and may not work.
+> The commented `#git` commands are for pulling/pushing [upstream](https://github.com/ImperialCollegeLondon/porescale) changes and may need adjustments.
 >
 > Some [modules](./src) have no cross dependency here.
 > The ones that do are discussed [below](#cloning-codes).
-> You may want to update these based on my forked versions,
-> see [aliraeini/porescale](https://github.com/aliraeini/porescale/tree/main/src).
-> Let me know for help or pull requests.
 
 ### Pore-Scale Modelling
 Flow in porous media occurs is ubiquitous in natural and manufactured settings, from rainfall falling on soil and transpiration in plants, to filling a baby’s nappy and fluid exchange in electrochemical devices, such as electrolysers and fuel cells. Underground, most of the world’s fresh water is held in porous rock and soil, while deeper formations may contain oil and gas; otherwise the pore space is filled with salty water which can be displaced to store carbon dioxide or hydrogen.
